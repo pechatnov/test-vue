@@ -2,9 +2,20 @@
   <div class="app">
     <form>
       <h4>Создание поста</h4>
-      <input class="input" type="text" placeholder="Название" />
-      <input class="input" type="text" placeholder="Описание" />
-      <button class="btn" @click="cleatePost">Создать</button>
+      <input
+        v-bind:value="title"
+        @input="inputTitle"
+        class="input"
+        type="text"
+        placeholder="Название"
+      />
+      <input
+        v-bind:value="body"
+        class="input"
+        type="text"
+        placeholder="Описание"
+      />
+      <button class="btn" @click="createPost">Создать</button>
     </form>
     <div class="post" v-for="post in posts">
       <div><b>Название:</b> {{ post.title }}</div>
@@ -22,10 +33,15 @@ export default {
         { id: 2, title: "JS 2", body: "Описание JS 2" },
         { id: 3, title: "JS 3", body: "Описание JS 3" },
       ],
+      title: "",
+      body: "",
     };
   },
   methods: {
-    cleatePost() {},
+    createPost() {},
+    inputTitle(event) {
+      console.log(event);
+    },
   },
 };
 </script>
