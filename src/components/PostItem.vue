@@ -5,13 +5,16 @@
       <div><b>Описание:</b> {{ post.body }}</div>
     </div>
     <div class="post__btns">
-      <button>Удалить</button>
+      <my-button>Удалить</my-button>
     </div>
   </div>
 </template>
 
 <script>
+import MyButton from "@/components/UI/MyButton";
+
 export default {
+  components: { MyButton },
   props: {
     post: {
       type: Object,

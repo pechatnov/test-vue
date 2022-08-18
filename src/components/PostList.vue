@@ -7,6 +7,7 @@
 
 <script>
 import PostItem from "@/components/PostItem";
+
 export default {
   components: { PostItem },
   props: {
